@@ -156,6 +156,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
           margin-left:5px;
           margin-top:20px;
           border: 2px #fff solid;
+          text-decoration: none;
       }
 
       .w3-button:hover {
@@ -171,6 +172,8 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
           margin-top:5px ;
           justify-content:space-between;
           border: 2px #fff solid;
+          text-decoration: none;
+
       }
 
 
@@ -184,7 +187,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     height: 500px;
     width: 450px;
     color: #fff;
-    left: 350px;
+    left: 450px;
     top:270px;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
    
@@ -204,7 +207,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     height: 500px;
     width: 450px;
     color: #fff;
-    left: 350px;
+    left: 450px;
     top:270px;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
    
@@ -224,7 +227,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     height: 500px;
     width: 450px;
     color: #fff;
-    left: 350px;
+    left: 450px;
     top:270px;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
    
@@ -245,7 +248,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     height: 500px;
     width: 450px;
     color: #fff;
-    left: 350px;
+    left: 450px;
     top:270px;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
    
@@ -323,7 +326,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 
 
     <div id="custom-alert">
-      <p>Por favor, clique no item com o qual deseja trabalhar</p>
+      <p><?php echo $username ?>, clique no item com o qual deseja trabalhar</p>
       <button id="ok-button" aria-required="click">Ok</button>
     </div>
 
@@ -342,7 +345,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 
     <!--PRODUTO  OK-->
     <div class="col-md-10 ml-sm-auto">
-      <form id="form1" class="limpar-campos" style="display: none;">
+      <form id="form1" class="limpar-campos" style="display: none;" method="post">
       <div class="titleRelatorio">
 		  <h1>Produto</h1>
       </div>
@@ -353,14 +356,14 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
       <label for="code">Código</label>
       <input type="code" id="code" name="code" placeholder="Digite seu código" required  class="formaticTextRelatorio">
       <label for="category">Categoria</label>
-		  <select class="formaticRelatorio" id="category" required>
+		  <select class="formaticRelatorio" id="category" required name="category">
               <option selected disabled>Selecione uma categoria</option>
               <option value="categoria1">Hidráulica</option>
               <option value="categoria2">Finalização</option>
               <option value="categoria3">Tintas</option>
       </select>
-      <label for="category">Unidade de Medida</label>
-      <select class="formaticRelatorio" id="unit" required>
+      <label for="unidadeMedida">Unidade de Medida</label>
+      <select class="formaticRelatorio" id="unit" required name="unidadeMedida">
               <option selected disabled>Selecione uma unidade de medida</option>
               <option value="média">Bobina</option>
               <option value="alta">Caixa com 10 sachês com 1 grama</option>
@@ -483,6 +486,52 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 
 </footer>
 </body>
+
+<?php
+
+
+
+    if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+
+        include("conexaoBD.php");
+
+        try {            
+            $nome = $_POST["nome"];
+            $code = $_POST["code"];
+            $category = $_POST["category"];
+            $unidadeMedida = $_POST["unidadeMedida"];
+
+            if ((trim($nome) == "") || (trim($code) == "")) {
+                echo "<span id='warning'>Insira o nome e código do produto!</span>";
+            } else {
+        
+                $stmt = $pdo->prepare("select * from produtoTCC where nome = :nome");
+                $stmt->bindParam(':nome', $nome);
+                $stmt->execute();
+
+                $rows = $stmt->rowCount();
+
+                if ($rows <= 0) {
+                    $stmt = $pdo->prepare("insert into produtoTCC (nome, code, category, unidadeMedida) values(:nome, :code, :category, :unidadeMedida)");
+                    $stmt->bindParam(':nome', $nome);
+                    $stmt->bindParam(':code', $code);
+                    $stmt->bindParam(':category', $category);
+                    $stmt->bindParam(':unidadeMedida',$unidadeMedida);
+                    $stmt->execute();
+
+                    echo "<span id='sucess'>Produto Cadastrado!</span>";
+                } else {
+                    echo "<span id='error'>Produto já existente!</span>";
+                }
+            }
+
+        } catch(PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+
+        $pdo = null;
+    }
+?>
 
 <script>
 

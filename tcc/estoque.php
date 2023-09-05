@@ -9,7 +9,8 @@
 	 <link rel="stylesheet" href="styleteste6.css">
    <link rel="icon" type="image/png" href="logo/1.png">
 </head>
-<body><?php
+<body>
+  <?php
   include 'menuLateral.php';
 ?>
 

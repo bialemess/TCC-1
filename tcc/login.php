@@ -1,7 +1,7 @@
 <?php
 session_start();
 $users = array(
-  array("username" => "admin", "password" => "1234", "level" => 3),
+  array("username" => "Admin", "password" => "1234", "level" => 3),
   array("username" => "user2", "password" => "user123", "level" => 2),
   array("username" => "user1", "password" => "user456", "level" => 1)
 );
