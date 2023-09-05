@@ -52,7 +52,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 <div class="divRelatorio3">
 	<form>
 		<div class="divWelcome">
-    <img src="logo/1.png" alt="Logo da UNICAMP" id="logo">
+    <img src="logo/1.png" alt="Logo da UNICAMP" id="logo" class="logoIndex">
 		<h1 class="textWelcome">Bem Vindo,<?php echo $username ?>!</h1>
 </div>
 		<div class="divTextRelatorio">

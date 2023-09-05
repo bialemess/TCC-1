@@ -66,29 +66,8 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
       }
 
 
-      /*cor das letras sem hover*/
 
-      .w3-sidebar a {
-
-        padding: 10px;
-        margin-bottom: 10px;
-        color: white;
-        text-align: center;
-      }
-
-
-      @media (max-width: 768px) {
-        .w3-sidebar {
-          width: 100%;
-          height: auto;
-        }
-
-        .w3-sidebar a {
-          padding: 5px;
-          margin-bottom: 5px;
-        }
-      }
-
+     
 
 
 
@@ -137,7 +116,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     margin-left: 5px;
     border-radius: 20px;
     padding: 6px;
-    margin-top: 25px;
+   
     transition: .2s;
     box-shadow: 0px 2px 4px rgba(0, 174, 255, 0.3);
    
@@ -154,20 +133,44 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 
       }
 
+      .
+    .divItemA {
+        margin-top:10px;
+        position: fixed;
+        margin-left:250px;
 
-      .w3-sidebar {
-        background-color: rgb(10, 96, 102);
+      }
+  
+      .w3-bar-item{
+        color: #fff !important;
+        font-weight: 700px;
+        background: rgba(255, 255, 255, 0.5) !important;
+        padding: 3px;
+        border-radius:20px;
         text-align: center;
-        width: 20%;
-        position: absolute;
+        font-size: 15px;
+         font-weight: bold;
+         padding:5px;
+          margin-top:5px ;
+          justify-content:space-between;
+          margin-left:5px;
+          margin-top:20px;
+          border: 2px #fff solid;
       }
 
       .w3-button:hover {
-        color: #000 !important;
-        font-weight: 700;
-        background-color: rgb(161, 46, 47) !important;
-        padding: 3%;
-
+        color: #fff !important;
+        font-weight: 700px;
+        background: rgba(255, 255, 255, 0.5) !important;
+        padding: 3px;
+        border-radius:20px;
+        text-align: center;
+        font-size: 15px;
+         font-weight: bold;
+         padding:5px;
+          margin-top:5px ;
+          justify-content:space-between;
+          border: 2px #fff solid;
       }
 
 
@@ -178,14 +181,15 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     border-radius: 20px;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 650px;
+    height: 500px;
+    width: 450px;
     color: #fff;
-    left: 340px;
-    top:280px;
+    left: 350px;
+    top:270px;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-    position: fixed;
+   
     margin-top: 10px;
+    position: fixed;
     border: 2px #fff solid;
        
 
@@ -193,55 +197,62 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
       }
 
       #form2 {
-
-
-        z-index: 5;
-        position: absolute;
-        /* define a largura máxima do formulário */
-        max-width: 800px;
-        /* define a margem esquerda em 15% para alinhar com a sidebar */
-        margin-left: 25%;
-        /* demais estilos */
-        align-items: center;
-        margin-top: 3cm;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 40px;
-        background-color: rgb(10, 96, 102);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 450px;
+    color: #fff;
+    left: 350px;
+    top:270px;
+    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+   
+    margin-top: 10px;
+    position: fixed;
+    border: 2px #fff solid;
+       
       }
 
 
       #form3 {
 
-        z-index: 5;
-        position: absolute;
-        /* define a largura máxima do formulário */
-        max-width: 800px;
-        /* define a margem esquerda em 15% para alinhar com a sidebar */
-        margin-left: 25%;
-        /* demais estilos */
-        align-items: center;
-        margin-top: 3cm;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 40px;
-        background-color: rgb(10, 96, 102);
+        background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 450px;
+    color: #fff;
+    left: 350px;
+    top:270px;
+    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+   
+    margin-top: 10px;
+    position: fixed;
+    border: 2px #fff solid;
 
 
       }
 
       #form4 {
 
-        z-index: 5;
-        position: absolute;
-        /* define a largura máxima do formulário */
-        max-width: 800px;
-        /* define a margem esquerda em 15% para alinhar com a sidebar */
-        margin-left: 25%;
-        /* demais estilos */
-        align-items: center;
-        margin-top: 3cm;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 40px;
-        background-color: rgb(10, 96, 102);
+       
+        background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 450px;
+    color: #fff;
+    left: 350px;
+    top:270px;
+    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+   
+    margin-top: 10px;
+    position: fixed;
+    border: 2px #fff solid;
+       
 
       }
 
@@ -270,6 +281,34 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
         width: 500px;
         z-index: 2;
       }
+      .button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 450px; 
+  margin-left:70px;
+  position: fixed;
+  
+}
+
+.button-container button {
+  margin: 0 5px; 
+}
+.button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 450px; 
+  margin-left:70px;
+  position: fixed;
+  
+}
+.iconeBuscar{
+    margin-right: 200px;
+    
+}
+
+.button-container button {
+  margin: 0 5px; 
+}
     </style>
   </head>
 
@@ -288,56 +327,6 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
       <button id="ok-button" aria-required="click">Ok</button>
     </div>
 
-
-    <div id="site-content" style="display: none;">
-
-      <!-- Sidebar -->
-      <div class="w3-sidebar w3-bar-block">
-
-        
-        <a href="#" class="w3-bar-item w3-button " style="text-decoration: none;">Adicionar &nbsp;&nbsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
-            viewBox="0 0 16 16">
-            <path
-              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-            <path fill-rule="evenodd"
-              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-          </svg>
-        </a>
-        <a href="#" class="w3-bar-item w3-button" style="text-decoration: none;">Atualizar &nbsp;&nbsp;&nbsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-          </svg>
-
-        </a>
-        <a href="#" class="w3-bar-item w3-button" style="text-decoration: none;">Excluir
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
-            viewBox="0 0 16 16">
-            <path
-              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
-            <path
-              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
-          </svg>
-        </a>
-        <a href="#" class="w3-bar-item w3-button" type="submit" style="text-decoration: none;">Confirmar
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg"
-            viewBox="0 0 16 16">
-            <path
-              d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-          </svg>
-        </a>
-        <a href="#" class="w3-bar-item w3-button" style="text-decoration: none;" onclick="limparCampos()">Cancelar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
-            viewBox="0 0 16 16">
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-          </svg>
-        </a>
-        <hr>
         <?php if ($level == 3) {
           //ordem: produtos, pessoas, unidades de medidas, categorias
           include('form/produto.php');
@@ -351,29 +340,18 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 }
 ?>
 
-
-
-
-      <hr>
-      <a href="index.php" class="w3-bar-item w3-button" style="text-align: center; text-decoration: none;">Voltar</a>
-
-    </div>
-  
+    <!--PRODUTO  OK-->
     <div class="col-md-10 ml-sm-auto">
-
       <form id="form1" class="limpar-campos" style="display: none;">
       <div class="titleRelatorio">
-		  <h1 >Produto</h1>
+		  <h1>Produto</h1>
       </div>
-      <div class="divTextRelatorio1">
+      <div class="divTextForm">
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required  class="formaticTextRelatorio">
-     <!-- <label for="search">Buscar</label>
-      <span class="icon"><i class="bi bi-search"></i>
-      <input type="text" id="search" placeholder="Buscar" class="formaticTextRelatorio"></span>-->
+  
       <label for="code">Código</label>
       <input type="code" id="code" name="code" placeholder="Digite seu código" required  class="formaticTextRelatorio">
-
       <label for="category">Categoria</label>
 		  <select class="formaticRelatorio" id="category" required>
               <option selected disabled>Selecione uma categoria</option>
@@ -381,7 +359,6 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
               <option value="categoria2">Finalização</option>
               <option value="categoria3">Tintas</option>
       </select>
-
       <label for="category">Unidade de Medida</label>
       <select class="formaticRelatorio" id="unit" required>
               <option selected disabled>Selecione uma unidade de medida</option>
@@ -401,102 +378,111 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
               <option value="alta">Pacote (500 folhas)</option>
               <option value="alta">Pacote com 4 blocos com 50 folhas</option>
             </select>
-
            <label for="formFile">Insira a imagem referente</label>
-          
               <input type="file" id="formFile" class="formaticTextRelatorio" >
-
-          </div>
-               <button id="ok-button" aria-required="click">CADASTRAR</button>
-                <button id="ok-button" aria-required="click">ATUALIZAR</button>
+          </div> 
+                <div class="button-container">
+                 <button id="ok-button" aria-required="click">CADASTRAR</button>
+                 <button id="ok-button" aria-required="click">ATUALIZAR</button>
                  <button id="ok-button" aria-required="click">EXCLUIR</button>
+                </div>   
       </form>
     </div>
 
-
+    <!--USUÁRIO -->
     <div class="col-md-10 ml-sm-auto">
-
-      <form id="form2" class="limpar-campos" style="display: none;">
-
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Insira o nome" required>
+    <form id="form2" class="limpar-campos" style="display: none;">
+    <div class="titleRelatorio">
+		  <h1>Usuário</h1>
+      </div>
+    <div class="form-row">
+    <div class="divTextForm2">
+      <label for="name">Nome</label>
+      <input type="text" class="formaticTextRelatorio" id="name" placeholder="Insira o nome" required>
+    
+      <div class="iconeBuscar">
+            <span class="icon"><i class="bi bi-search"></i>
+            <input type="text" class="formaticTextRelatorio" id="search" placeholder="Buscar"></span>
           </div>
-          <div class="form-group col-md-6">
-            <label for="search"><i class="fas fa-search"></i></label>
-            <input type="text" class="form-control" id="search" placeholder="Buscar">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="code">Código de funcionário</label>
-            <input type="text" class="form-control" id="code" placeholder="Insira o código" required>
-          </div>
-          <div class="form-group col-md-6 dropdown">
-            <label for="unit">Tipo de usuário</label>
-            <select class="form-control" id="unit" required>
-              <option selected disabled>Selecione o tipo de usuário</option>
-              <option value="média">Adm</option>
-              <option value="alta">nível 1</option>
-              <option value="alta">nível 2</option>
-            </select>
-          </div>
-        </div>
 
-      </form>
-
-    </div>
-/////
-
-
-
-
-////Unidade de medida
-    <div class="col-md-10 ml-sm-auto">
+      <label for="code">Código de funcionário</label>
+      <input type="text" class="formaticTextRelatorio" id="code" placeholder="Insira o código" required>
+  
+      <label for="unit">Tipo de usuário</label>
+      <select class="formaticRelatorio" id="unit" required>
+        <option selected disabled>Selecione o tipo de usuário</option>
+        <option value="média">Adm</option>
+        <option value="alta">nível 1</option>
+        <option value="alta">nível 2</option>
+      </select>
+   
+  </div>
+  <div class="button-container">
+                 <button id="ok-button" aria-required="click">CADASTRAR</button>
+                 <button id="ok-button" aria-required="click">ATUALIZAR</button>
+                 <button id="ok-button" aria-required="click">EXCLUIR</button>
+                </div>   
+</form>
+</div>
+      <!--UNIDADE DE MEDIDA-->
       <form id="form3" class="limpar-campos" style="display: none;">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="name">Unidade de Medida</label>
-            <input type="text" class="form-control" id="name" placeholder="Insira a unidade de medida" required>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="search"><i class="fas fa-search" class="buscar"></i></label> <input type="text"
-              class="form-control" id="search" placeholder="Buscar">
+      <div class="titleRelatorio">
+      <h1>Unidade de Medida</h1>
+       </div>
+        
+          <div class="divTextForm1">
+            <label for="name">Nova Medida</label>
+            <input type="text" class="formaticTextRelatorio" id="name" placeholder="Insira a unidade de medida" required>
+            <div class="iconeBuscar">
+            <span class="icon"><i class="bi bi-search"></i>
+            <input type="text" class="formaticTextRelatorio" id="search" placeholder="Buscar"></span>
           </div>
         </div>
+          
+        
+          <div class="button-container">
+                 <button id="ok-button" aria-required="click">CADASTRAR</button>
+                 <button id="ok-button" aria-required="click">ATUALIZAR</button>
+                 <button id="ok-button" aria-required="click">EXCLUIR</button>
+                </div> 
       </form>
-    </div>
-//
-//Categoria
+    <!--CATEGORIA-->
     <div class="col-md-10 ml-sm-auto">
       <form id="form4" class="limpar-campos" style="display: none;">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="name">Categoria</label>
-            <input type="text" class="form-control" id="name" placeholder="Insira a categoria" required>
-          </div>
+      <div class="titleRelatorio">
+      <h1>Categoria</h1>
+       </div>
+        
+          <div class="divTextForm1">
+            <label for="name">Nova categoria</label>
+            <input type="text" class="formaticTextRelatorio" id="name" placeholder="Insira a categoria" required>
+         
 
-          <div class="form-group col-md-6">
-            <label for="search"><i class="fas fa-search"></i></label> <input type="text" class="form-control"
-              id="search" placeholder="Buscar">
+            <div class="iconeBuscar">
+            <span class="icon"><i class="bi bi-search"></i>
+            <input type="text" class="formaticTextRelatorio" id="search" placeholder="Buscar"></span>
           </div>
 
         </div>
+        <div class="button-container">
+                 <button id="ok-button" aria-required="click">CADASTRAR</button>
+                 <button id="ok-button" aria-required="click">ATUALIZAR</button>
+                 <button id="ok-button" aria-required="click">EXCLUIR</button>
+                </div> 
       </form>
     </div>
 
-  </div>
   
+  
+
+
   <footer class="footer">
-<footer>    
+  <footer>    
   <p class="footer-text">SARS | UNICAMP | COTIL</p>
     <button class="btnRodape" onclick="abrirFormulario()">Contatar Desenvolvedor</button>
 
 </footer>
-  
 </body>
-
 
 <script>
 
