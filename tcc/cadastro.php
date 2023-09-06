@@ -16,7 +16,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 
   $username = $_SESSION['username'];
 
-  $level = $_SESSION['level'];
+  $level = $_SESSION['level'];}
   ?>
 
   <!DOCTYPE html>
@@ -28,290 +28,14 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     <link rel="icon" type="image/png" href="logo/1.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styleteste6.css">
+    <link rel="stylesheet" href="formsCadastro.css">
    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
     <style>
-      body {
-        height: 100vh;
-    background: linear-gradient(45deg,#257bcf,#5088bf,#75a7d9);
-    background-size: 300% 600%;
-    animation: gradientAnimation 2s ease infinite;
-      }
-      @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-      form {
-        margin-top: 80px;
-        margin-left: 25%;
-
-      }
-
-      label {
-        color: white;
-      }
-        #zoom:hover {
-        transform: scale(1.1, 1.1);
-      }
-
-
-
-     
-
-
-
-
-      .form-row .form-group {
-        padding-right: 15px;
-        padding-left: 15px;
-      }
-
-      .custom-file-input {
-        width: 100%;
-      }
-
-      select.form-control {
-        bottom: auto;
-      }
-
-
-      #custom-alert {
-        position: fixed;
-        top: 300px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(255, 255, 255, 0.5);
-        color: #fff;
-        padding: 20px;
-        font-weight: bold;
-        border-radius: 15px;
-        text-align: center;
-        z-index: 500;
-        border: 2px solid #fff;
-      }
-
-      #custom-alert p {
-        margin-bottom: 10px;
-      }
-
-      #ok-button {
-
-        background-color: #fff;
-    font-size: 13px;
-    width: 100px; /* Reduzi a largura para ajustar melhor */
-    cursor: pointer;
-    color: #000000;
-    border: none;
-    margin-left: 5px;
-    border-radius: 20px;
-    padding: 6px;
-   
-    transition: .2s;
-    box-shadow: 0px 2px 4px rgba(0, 174, 255, 0.3);
-   
-    font-weight: normal;
-    text-align: center;
-
-      }
-
-      #ok-button:hover {
-        width: 99px;
-    margin-left:6px;
-    box-shadow: 0px 4px 8px rgba(7, 95, 136, 0.3);
-    transition: .2s;
-
-      }
-
-      .
-    .divItemA {
-        margin-top:10px;
-        position: fixed;
-        margin-left:250px;
-
-      }
-  
-      .w3-bar-item{
-        color: #fff !important;
-        font-weight: 700px;
-        background: rgba(255, 255, 255, 0.5) !important;
-        padding: 3px;
-        border-radius:20px;
-        text-align: center;
-        font-size: 15px;
-         font-weight: bold;
-         padding:5px;
-          margin-top:5px ;
-          justify-content:space-between;
-          margin-left:5px;
-          margin-top:20px;
-          border: 2px #fff solid;
-          text-decoration: none;
-      }
-
-      .w3-button:hover {
-        color: #fff !important;
-        font-weight: 700px;
-        background: rgba(255, 255, 255, 0.5) !important;
-        padding: 3px;
-        border-radius:20px;
-        text-align: center;
-        font-size: 15px;
-         font-weight: bold;
-         padding:5px;
-          margin-top:5px ;
-          justify-content:space-between;
-          border: 2px #fff solid;
-          text-decoration: none;
-
-      }
-
-
-
-      #form1 {
-
-        background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 450px;
-    color: #fff;
-    left: 450px;
-    top:270px;
-    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-   
-    margin-top: 10px;
-    position: fixed;
-    border: 2px #fff solid;
-       
-
-
-      }
-
-      #form2 {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 450px;
-    color: #fff;
-    left: 450px;
-    top:270px;
-    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-   
-    margin-top: 10px;
-    position: fixed;
-    border: 2px #fff solid;
-       
-      }
-
-
-      #form3 {
-
-        background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 450px;
-    color: #fff;
-    left: 450px;
-    top:270px;
-    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-   
-    margin-top: 10px;
-    position: fixed;
-    border: 2px #fff solid;
-
-
-      }
-
-      #form4 {
-
-       
-        background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 450px;
-    color: #fff;
-    left: 450px;
-    top:270px;
-    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-   
-    margin-top: 10px;
-    position: fixed;
-    border: 2px #fff solid;
-       
-
-      }
-
-
-      .form-content {
-        background-color: #000;
-        padding: 20px;
-        border-radius: 5px;
-      }
-
-      #content {
-        display: none;
-      }
-
-      body {
-        margin: 0;
-
-      }
-
-      .unicamp {
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        transform: translate(-50%, -50%);
-        height: 400px;
-        width: 500px;
-        z-index: 2;
-      }
-      .button-container {
-  display: flex;
-  justify-content: center; 
-  margin-top: 450px; 
-  margin-left:70px;
-  position: fixed;
-  
-}
-
-.button-container button {
-  margin: 0 5px; 
-}
-.button-container {
-  display: flex;
-  justify-content: center; 
-  margin-top: 450px; 
-  margin-left:70px;
-  position: fixed;
-  
-}
-.iconeBuscar{
-    margin-right: 200px;
     
-}
-
-.button-container button {
-  margin: 0 5px; 
-}
     </style>
   </head>
 
@@ -323,27 +47,11 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 <button class="btnLogOut" onclick="window.location.href='logout.php'" >sair</button>
 </div>
 
+ 
 
+       
 
-    <div id="custom-alert">
-      <p><?php echo $username ?>, clique no item com o qual deseja trabalhar</p>
-      <button id="ok-button" aria-required="click">Ok</button>
-    </div>
-
-        <?php if ($level == 3) {
-          //ordem: produtos, pessoas, unidades de medidas, categorias
-          include('form/produto.php');
-          include('form/pessoas.php');
-          include('form/medidas.php');
-          include('form/categorias.php');
-        } else
-          if ($level == 2) {
-            include('form/medidas.php');
-          }
-}
-?>
-
-    <!--PRODUTO  OK-->
+    <!--PRODUTO -->
     <div class="col-md-10 ml-sm-auto">
       <form id="form1" class="limpar-campos" style="display: none;" method="post">
       <div class="titleRelatorio">
@@ -382,7 +90,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
               <option value="alta">Pacote com 4 blocos com 50 folhas</option>
             </select>
            <label for="formFile">Insira a imagem referente</label>
-              <input type="file" id="formFile" class="formaticTextRelatorio" >
+              <input type="file" id="formFile" class="formaticTextRelatorio"  accept="image/*" name="foto">
           </div> 
                 <div class="button-container">
                  <button id="ok-button" aria-required="click">CADASTRAR</button>
@@ -426,6 +134,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
                  <button id="ok-button" aria-required="click">EXCLUIR</button>
                 </div>   
 </form>
+
 </div>
       <!--UNIDADE DE MEDIDA-->
       <form id="form3" class="limpar-campos" style="display: none;">
@@ -475,9 +184,14 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
       </form>
     </div>
 
-  
-  
-
+    <div id="custom-alert">
+      <p><?php echo $username ?>, clique no item com o qual deseja trabalhar</p>
+      <br>
+      <a href="#" onclick="trocarFormulario('form1')"><button id="ok-button" aria-required="click">Produto</button></a>
+      <a href="#" onclick="trocarFormulario('form2')"><button id="ok-button" aria-required="click">Pessoas</button></a>
+      <a href="#" onclick="trocarFormulario('form3')"><button id="ok-button" aria-required="click">Medidas</button></a>
+      <a href="#" onclick="trocarFormulario('form4')"><button id="ok-button" aria-required="click">Categorias</button></a>
+    </div>
 
   <footer class="footer">
   <footer>    
@@ -485,6 +199,10 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     <button class="btnRodape" onclick="abrirFormulario()">Contatar Desenvolvedor</button>
 
 </footer>
+  
+  
+
+
 </body>
 
 <?php
@@ -501,9 +219,27 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
             $category = $_POST["category"];
             $unidadeMedida = $_POST["unidadeMedida"];
 
+           
+             $uploaddir = 'upload/fotos/'; //diretório onde será gravado a imagem
+
+             $foto = $_FILES['foto'];
+             $nomeFoto = $foto['name'];
+             $tipoFoto = $foto['type'];
+             $tamanhoFoto = $foto['size'];
+
+             $info = new SplFileInfo($nomeFoto);
+             $extensaoArq = $info->getExtension();
+             $novoNomeFoto = $ra . "." . $extensaoArq;
+
             if ((trim($nome) == "") || (trim($code) == "")) {
                 echo "<span id='warning'>Insira o nome e código do produto!</span>";
-            } else {
+            }  else if ( ($nomeFoto != "") && (!preg_match('/^image\/(jpeg|png|gif)$/', $tipoFoto)) ) { //validção tipo arquivo
+                echo "<span id='error'>Isso não é uma imagem válida</span>";
+
+            } else if ( ($nomeFoto != "") && ($tamanhoFoto > TAMANHO_MAXIMO) ) { //validação tamanho arquivo
+                echo "<span id='error'>A imagem deve possuir no máximo 2 MB</span>";}
+
+                else {
         
                 $stmt = $pdo->prepare("select * from produtoTCC where nome = :nome");
                 $stmt->bindParam(':nome', $nome);
@@ -512,11 +248,24 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
                 $rows = $stmt->rowCount();
 
                 if ($rows <= 0) {
-                    $stmt = $pdo->prepare("insert into produtoTCC (nome, code, category, unidadeMedida) values(:nome, :code, :category, :unidadeMedida)");
+                  if (
+                    ($nomeFoto != "") && 
+                    (move_uploaded_file($_FILES['foto']['tmp_name'], 
+                                       $uploaddir . $novoNomeFoto)
+                  )
+               ) {
+                   // caminho/nome da imagem p/ gravar no BD
+                   $uploadfile = $uploaddir . $novoNomeFoto; 
+               } else {
+                   $uploadfile = null;
+                   echo "Sem upload de imagem.";
+               }
+                    $stmt = $pdo->prepare("insert into produtoTCC (nome, code, category, unidadeMedida,arquivoFoto) values(:nome, :code, :category, :unidadeMedida,:arquivoFoto)");
                     $stmt->bindParam(':nome', $nome);
                     $stmt->bindParam(':code', $code);
                     $stmt->bindParam(':category', $category);
                     $stmt->bindParam(':unidadeMedida',$unidadeMedida);
+                    $stmt->bindParam(':arquivoFoto', $uploadfile);
                     $stmt->execute();
 
                     echo "<span id='sucess'>Produto Cadastrado!</span>";
@@ -547,9 +296,6 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     document.getElementById(id).style.display = "block";
   }
 
-
-  // java do alert inicial vsfffff
-
   $(document).ready(function () {
     // Adiciona o evento de clique ao botão "OK"
     $('#ok-button').click(function () {
@@ -560,8 +306,6 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     });
   });
 
-</script>
-<script>
     function limparCampos() {
         var forms = document.getElementsByClassName("limpar-campos");
         for (var i = 0; i < forms.length; i++) {
@@ -571,3 +315,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 </script>
 
 </html>
+
+
+
+
