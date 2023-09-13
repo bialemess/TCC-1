@@ -34,7 +34,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     
     <title>Novo Pedido | AlmoxariSars</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styleteste6.css">
+    <link rel="stylesheet" href="styleteste7.css">
     <link rel="icon" type="image/png" href="logo/1.png">
 
 </head>
@@ -45,11 +45,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 <?php
   include 'menuLateral.php';
 ?>
-<div class="navSup">
 
-<button class="btnLogOut" onclick="window.location.href='logout.php'" >sair</button>
-
-</div>
 
 <footer class="footer">
 <footer>    
@@ -62,12 +58,11 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 		<div class="titleRelatorio">
 		<h1 >Novo Pedido</h1>
         </div>
-<div class="divTextRelatorio1">
+        <div class="divTextRelatorio1">
 		<label for="nome">Código de Usuário</label>
 		<input type="text" id="nome" name="nome" placeholder="Digite seu nome" required  class="formaticTextRelatorio">
-        <label for="nome">E-mail</label>
-		<input type="text" id="nome" name="nome" placeholder="Digite seu email" required  class="formaticTextRelatorio">
-        
+    <label for="nome">Ordem de Serviço</label>
+		<input type="text" id="nome" name="nome" placeholder="Digite o Código de Serviço" required  class="formaticTextRelatorio">
         <label for="produto">Produto</label>
 		<select id="produto" name="produto" class="formaticRelatorio">
       <option value="">Selecione um filtro</option>

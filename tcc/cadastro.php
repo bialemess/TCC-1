@@ -27,7 +27,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     <title>Cadastro | AlmoxariSars</title>
     <link rel="icon" type="image/png" href="logo/1.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styleteste6.css">
+    <link rel="stylesheet" href="styleteste7.css">
     <link rel="stylesheet" href="formsCadastro.css">
    
 
@@ -43,14 +43,10 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
   <?php
   include 'menuLateral.php';
 ?>
-<div class="navSup">
-<button class="btnLogOut" onclick="window.location.href='logout.php'" >sair</button>
-</div>
 
  
 
-       
-
+      
     <!--PRODUTO -->
     <div class="col-md-10 ml-sm-auto">
       <form id="form1" class="limpar-campos" style="display: none;" method="post">
@@ -297,13 +293,20 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
   }
 
   $(document).ready(function () {
-    // Adiciona o evento de clique ao botão "OK"
-    $('#ok-button').click(function () {
+    var elementos = document.querySelectorAll('#ok-button');
+    elementos.forEach(
+      function(e){
+        // Adiciona o evento de clique ao botão "OK"
+    $(e).click(function () {
       // Exibe o conteúdo do site
       $('#site-content').css('display', 'block');
       // Oculta o alert personalizado
       $('#custom-alert').css('display', 'none');
     });
+
+      }
+    )
+    
   });
 
     function limparCampos() {
