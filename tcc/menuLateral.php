@@ -40,7 +40,7 @@ echo '
 }else if($level==2){
         
 echo '
-<nav class="menu-lateral">
+<nav class="menu-lateral2">
 <ul>
     <li class="item-menu">
         <a href="index.php">
@@ -79,7 +79,7 @@ echo '
 }else if($level==1){
         
 echo '
-<nav class="menu-lateral">
+<nav class="menu-lateral1">
 <ul>
     <li class="item-menu">
         <a href="index.php">

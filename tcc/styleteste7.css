@@ -8,6 +8,8 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 body{
+    
+    margin: 0;
     height: 100vh;
     background: linear-gradient(45deg,#257bcf,#5088bf,#75a7d9);
     background-size: 300% 600%;
@@ -472,7 +474,7 @@ body{
 } nav.menu-lateral{
     width: 60px;
     height:360px;
-   
+
     background: rgba(255, 255, 255, 0.5); 
     padding: 40px 0 40px 1%; 
     border-top-right-radius: 45px;
@@ -480,11 +482,57 @@ body{
     box-shadow: 3px 0 0 #00aeff;
     position: fixed;
     display: flex;
-    margin-top: 50px;
+    margin-top:5%;
     left: 0;
     overflow: hidden;
     transition: .3s;
 }
+nav.menu-lateral:hover{
+    width: 100px;
+    transition: .3s;
+}
+ nav.menu-lateral1{
+    width: 60px;
+    height:160px;
+
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 40px 0 40px 1%; 
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    box-shadow: 3px 0 0 #00aeff;
+    position: fixed;
+    display: flex;
+    margin-top:11%;
+    left: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+nav.menu-lateral1:hover{
+    width: 200px;
+    transition: .3s;
+}
+
+nav.menu-lateral2{
+    width: 60px;
+    height:220px;
+
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 40px 0 40px 1%; 
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    box-shadow: 3px 0 0 #00aeff;
+    position: fixed;
+    display: flex;
+    margin-top:11%;
+    left: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+nav.menu-lateral2:hover{
+    width: 200px;
+    transition: .3s;
+}
+
 nav.menu-lateral:hover{
     width: 200px;
     transition: .3s;
@@ -528,7 +576,7 @@ ul li.item-menu a{
 }
 ul li.item-menu:first-child {
     
-    margin-top: 10px; 
+     
     padding-top: 15px; 
  
 }
