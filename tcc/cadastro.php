@@ -44,9 +44,6 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
   include 'menuLateral.php';
 ?>
 
- 
-
-      
     <!--PRODUTO -->
     <div class="col-md-10 ml-sm-auto">
       <form id="form1" class="limpar-campos" style="display: none;" method="post">
@@ -105,7 +102,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     <div class="form-row">
     <div class="divTextForm2">
       <label for="name">Nome</label>
-      <input type="text" class="formaticTextRelatorio" id="name" placeholder="Insira o nome" required>
+      <input type="text" class="formaticTextRelatorio" id="name" name="name" placeholder="Insira o nome" required>
     
       <div class="iconeBuscar">
             <span class="icon"><i class="bi bi-search"></i>
@@ -113,16 +110,43 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
           </div>
 
       <label for="code">Código de funcionário</label>
-      <input type="text" class="formaticTextRelatorio" id="code" placeholder="Insira o código" required>
+      <input type="text" class="formaticTextRelatorio" id="code" name="code" placeholder="Insira o código" required>
   
       <label for="unit">Tipo de usuário</label>
-      <select class="formaticRelatorio" id="unit" required>
+      <select class="formaticRelatorio" id="unit" name="unit" required>
         <option selected disabled>Selecione o tipo de usuário</option>
         <option value="média">Adm</option>
         <option value="alta">nível 1</option>
         <option value="alta">nível 2</option>
       </select>
+   <?php
+    include('bd.php');
+          if($_SERVER["REQUEST_METHOD"]==='POST'){
+            $name = $_POST['name'];
+            $code = $_POST['code'];
+            $unit = $_POST['unit'];
+
+            if((trim($name)=="")||(trim($code)=="")||trim($unit)==""){
+              echo "<div class='container' style='background-color: red; color: white; text-align: center; padding: 10px; border-radius: 5px;'>
+              Todos os campos são obrigatórios!";
+              echo "</div>";
+            }
+            else{
+              $pdo = conexaoBd();
+              $rows = buscarLogin($code, $pdo); 
+
+                    $stmt = $pdo->prepare("insert into login (id, usuario, level, senha, senha_hash) values(:id, :nomePet, :nomeDono, :raca, :idade, :foto)");
+                    $stmt->bindParam(':id', $id);
+                    $stmt->bindParam(':nomePet', $nomePet);
+                    $stmt->bindParam(':nomeDono', $nomeDono);
+                    $stmt->bindParam(':raca', $raca);
+                    $stmt->bindParam(':idade', $idade);
+                    $stmt->bindParam(':foto', $uploadfile);
+                    $stmt->execute();
+            }
+          }
    
+   ?>
   </div>
   <div class="button-container">
                  <button id="ok-button" aria-required="click">CADASTRAR</button>

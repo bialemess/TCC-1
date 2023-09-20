@@ -1,9 +1,27 @@
 <?php
+function conexaoBd(){
+    try {        
+        // conexão PDO    // IP, nomeBD, usuario, senha   
+        $db = 'mysql:host=143.106.241.3;dbname=cl201272;charset=utf8';
+        $user = 'cl201272';
+        $passwd = 'cl*26082005';
+        $pdo = new PDO($db, $user, $passwd);
+    
+        // ativar o depurador de erros para gerar exceptions em caso de erros
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+
+    } catch (PDOException $e) {
+        $output = 'Impossível conectar BD : ' . $e . '<br>';
+        echo $output;
+    }    
+    return $pdo;
+}
 //perguntar sobre senha hash pra sisi berbebt
 
 // Inclua o arquivo de conexão com o banco de dados
-/*include('conexaoBD.php');
 
+
+/*
 // Consulta para recuperar todas as senhas em texto plano da tabela
 $sql = "SELECT id, senha FROM login";
 $result = $pdo->query($sql);
@@ -23,14 +41,14 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 }
-*/
+
 // Encerre a conexão com o banco de dados após a migração
-//$pdo = null;
-
+$pdo = null;
+*/
+function login(){
 session_start();
-
 try {
-    include('conexaoBD.php');
+    $pdo = conexaoBd();
     
     if (isset($_POST['submit'])) {
         $usuario = $_POST['username'];
@@ -66,6 +84,33 @@ try {
 }
 
 $pdo = null;
+}
+ function buscarLogin($code, $pdo){
+    
+    $stmt = $pdo->prepare("select * from login where id = :code");
+    $stmt->bindParam(':id', $code);
+    $stmt->execute();
+    $rows = $stmt->rowCount();
+    return $rows;
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
+
 
 

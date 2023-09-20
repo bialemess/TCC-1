@@ -30,9 +30,6 @@ $level = $_SESSION['level'];
   ?>
 
 
-
-
-
   <div class="divRelatorio3">
     <form>
       <div class="divWelcome">
@@ -50,7 +47,6 @@ $level = $_SESSION['level'];
       </div>
     </form>
   </div>
-
 
   <footer class="footer">
     <footer>
