@@ -46,7 +46,8 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
 
     <!--PRODUTO -->
     <div class="col-md-10 ml-sm-auto">
-      <form id="form1" class="limpar-campos" style="display: none;" method="post">
+      <form id="form1" class="limpar-campos" style="display: none;" method="post" name="formProduto" action="teste.php
+      ">
       <div class="titleRelatorio">
 		  <h1>Produto</h1>
       </div>
@@ -83,10 +84,10 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
               <option value="alta">Pacote com 4 blocos com 50 folhas</option>
             </select>
            <label for="formFile">Insira a imagem referente</label>
-              <input type="file" id="formFile" class="formaticTextRelatorio"  accept="image/*" name="foto">
+              <input type="file" id="formFile" class="formaticTextRelatorio"  accept="image/*" name="foto"  accept="image/gif, image/png, image/jpg, image/jpeg">
           </div> 
                 <div class="button-container">
-                 <button id="ok-button" aria-required="click">CADASTRAR</button>
+                 <input id="ok-button" name="cadProduto" aria-required="click" type="submit" value="Cadastrar"></input>
                  <button id="ok-button" aria-required="click">ATUALIZAR</button>
                  <button id="ok-button" aria-required="click">EXCLUIR</button>
                 </div>   
@@ -119,8 +120,13 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
         <option value="alta">nível 1</option>
         <option value="alta">nível 2</option>
       </select>
-   <?php
+
+    <?php
+    /*
     include('bd.php');
+
+
+
           if($_SERVER["REQUEST_METHOD"]==='POST'){
             $name = $_POST['name'];
             $code = $_POST['code'];
@@ -145,7 +151,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
                     $stmt->execute();
             }
           }
-   
+   */
    ?>
   </div>
   <div class="button-container">
@@ -207,7 +213,7 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     <div id="custom-alert">
       <p><?php echo $username ?>, clique no item com o qual deseja trabalhar</p>
       <br>
-      <a href="#" onclick="trocarFormulario('form1')"><button id="ok-button" aria-required="click">Produto</button></a>
+      <a onclick="trocarFormulario('form1')"><button id="ok-button" aria-required="click">Produto</button></a>
       <a href="#" onclick="trocarFormulario('form2')"><button id="ok-button" aria-required="click">Pessoas</button></a>
       <a href="#" onclick="trocarFormulario('form3')"><button id="ok-button" aria-required="click">Medidas</button></a>
       <a href="#" onclick="trocarFormulario('form4')"><button id="ok-button" aria-required="click">Categorias</button></a>
@@ -219,88 +225,12 @@ if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
     <button class="btnRodape" onclick="abrirFormulario()">Contatar Desenvolvedor</button>
 
 </footer>
-  
+
   
 
 
 </body>
 
-<?php
-
-
-
-    if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-
-        include("conexaoBD.php");
-
-        try {            
-            $nome = $_POST["nome"];
-            $code = $_POST["code"];
-            $category = $_POST["category"];
-            $unidadeMedida = $_POST["unidadeMedida"];
-
-           
-             $uploaddir = 'upload/fotos/'; //diretório onde será gravado a imagem
-
-             $foto = $_FILES['foto'];
-             $nomeFoto = $foto['name'];
-             $tipoFoto = $foto['type'];
-             $tamanhoFoto = $foto['size'];
-
-             $info = new SplFileInfo($nomeFoto);
-             $extensaoArq = $info->getExtension();
-             $novoNomeFoto = $ra . "." . $extensaoArq;
-
-            if ((trim($nome) == "") || (trim($code) == "")) {
-                echo "<span id='warning'>Insira o nome e código do produto!</span>";
-            }  else if ( ($nomeFoto != "") && (!preg_match('/^image\/(jpeg|png|gif)$/', $tipoFoto)) ) { //validção tipo arquivo
-                echo "<span id='error'>Isso não é uma imagem válida</span>";
-
-            } else if ( ($nomeFoto != "") && ($tamanhoFoto > TAMANHO_MAXIMO) ) { //validação tamanho arquivo
-                echo "<span id='error'>A imagem deve possuir no máximo 2 MB</span>";}
-
-                else {
-        
-                $stmt = $pdo->prepare("select * from produtoTCC where nome = :nome");
-                $stmt->bindParam(':nome', $nome);
-                $stmt->execute();
-
-                $rows = $stmt->rowCount();
-
-                if ($rows <= 0) {
-                  if (
-                    ($nomeFoto != "") && 
-                    (move_uploaded_file($_FILES['foto']['tmp_name'], 
-                                       $uploaddir . $novoNomeFoto)
-                  )
-               ) {
-                   // caminho/nome da imagem p/ gravar no BD
-                   $uploadfile = $uploaddir . $novoNomeFoto; 
-               } else {
-                   $uploadfile = null;
-                   echo "Sem upload de imagem.";
-               }
-                    $stmt = $pdo->prepare("insert into produtoTCC (nome, code, category, unidadeMedida,arquivoFoto) values(:nome, :code, :category, :unidadeMedida,:arquivoFoto)");
-                    $stmt->bindParam(':nome', $nome);
-                    $stmt->bindParam(':code', $code);
-                    $stmt->bindParam(':category', $category);
-                    $stmt->bindParam(':unidadeMedida',$unidadeMedida);
-                    $stmt->bindParam(':arquivoFoto', $uploadfile);
-                    $stmt->execute();
-
-                    echo "<span id='sucess'>Produto Cadastrado!</span>";
-                } else {
-                    echo "<span id='error'>Produto já existente!</span>";
-                }
-            }
-
-        } catch(PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
-
-        $pdo = null;
-    }
-?>
 
 <script>
 
