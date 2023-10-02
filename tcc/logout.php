@@ -1,5 +1,5 @@
 <?php
 
-include('loginTeste.php');
+include('login.php');
 session_destroy();
 ?>

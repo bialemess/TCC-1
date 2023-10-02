@@ -16,35 +16,7 @@ function conexaoBd(){
     }    
     return $pdo;
 }
-//perguntar sobre senha hash pra sisi berbebt
 
-// Inclua o arquivo de conexão com o banco de dados
-
-
-/*
-// Consulta para recuperar todas as senhas em texto plano da tabela
-$sql = "SELECT id, senha FROM login";
-$result = $pdo->query($sql);
-
-// Loop através dos resultados
-while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    $id = $row['id'];
-    $senha_em_texto_plano = $row['senha'];
-
-    // Calcule o hash da senha em texto plano
-    $senha_hash = password_hash($senha_em_texto_plano, PASSWORD_DEFAULT);
-
-    // Atualize a coluna do hash da senha no banco de dados
-    $updateSql = "UPDATE login SET senha_hash = :senha_hash WHERE id = :id";
-    $stmt = $pdo->prepare($updateSql);
-    $stmt->bindParam(':senha_hash', $senha_hash, PDO::PARAM_STR);
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-}
-
-// Encerre a conexão com o banco de dados após a migração
-$pdo = null;
-*/
 function login(){
 session_start();
 try {
@@ -92,9 +64,56 @@ $pdo = null;
     $stmt->execute();
     $rows = $stmt->rowCount();
     return $rows;
-
  }
+ function aviso(){
+    ini_set('display_errors', 0);
+set_error_handler('tratarAviso');
+function tratarAviso($errno, $errstr, $errfile, $errline)
+{
+  // Exibir a tela bonita ao invés do aviso padrão
+  include 'login.php';
+  exit(); // Encerra a execução do script após exibir a tela bonita
+}
 
+session_start();
+
+$username = $_SESSION['username'];
+
+if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
+
+  $username = $_SESSION['username'];
+
+  $level = $_SESSION['level'];}
+ }
+//perguntar sobre senha hash pra sisi berbebt
+
+// Inclua o arquivo de conexão com o banco de dados
+
+
+/*
+// Consulta para recuperar todas as senhas em texto plano da tabela
+$sql = "SELECT id, senha FROM login";
+$result = $pdo->query($sql);
+
+// Loop através dos resultados
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
+    $senha_em_texto_plano = $row['senha'];
+
+    // Calcule o hash da senha em texto plano
+    $senha_hash = password_hash($senha_em_texto_plano, PASSWORD_DEFAULT);
+
+    // Atualize a coluna do hash da senha no banco de dados
+    $updateSql = "UPDATE login SET senha_hash = :senha_hash WHERE id = :id";
+    $stmt = $pdo->prepare($updateSql);
+    $stmt->bindParam(':senha_hash', $senha_hash, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+}
+
+// Encerre a conexão com o banco de dados após a migração
+$pdo = null;
+*/
 
 
 

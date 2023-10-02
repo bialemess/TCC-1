@@ -1,22 +1,6 @@
 <?php
-ini_set('display_errors', 0);
-set_error_handler('tratarAviso');
-function tratarAviso($errno, $errstr, $errfile, $errline)
-{
-  // Exibir a tela bonita ao invés do aviso padrão
-  include 'login.php';
-  exit(); // Encerra a execução do script após exibir a tela bonita
-}
-
-session_start();
-
-$username = $_SESSION['username'];
-
-if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
-
-  $username = $_SESSION['username'];
-
-  $level = $_SESSION['level'];}
+  include("bd.php");
+  aviso();
   ?>
 
   <!DOCTYPE html>

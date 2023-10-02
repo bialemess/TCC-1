@@ -8,7 +8,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="logo/1.png"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="loginStyle.css">
+    <link rel="stylesheet" href="css/loginStyle.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <div class="container d-flex justify-content-center align-items-center vh-100">
@@ -18,7 +18,7 @@
        <img src="logo/unicamp.png" alt="Logo da UNICAMP">-->
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-4">
         <div class="form-container">
 
            <div class="containerLog">
@@ -40,12 +40,14 @@
               <!--E-mail-->
               <div class="formC">
              <div class="group">
+              <ion-icon name="person-outline" class="iconLogin"></ion-icon>
+              <label for="username">E-mail</label>
              <input required="" type="text" class="input" id="username" name="username" autocomplete="off">
              <span class="highlight"></span>
              <span class="bar"></span>
-             <label for="username">E-mail</label>
+             
              </div>
-               <ion-icon name="person-outline" class="iconLogin"></ion-icon>
+               
 
              <div class="formatic">
              <button type="submit" id="submit" name="submit">Enviar</button>

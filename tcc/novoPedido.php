@@ -1,30 +1,8 @@
 <?php
-//tratar o warnning de erro https://www.totvs.com/  https://admsistemas.com.br/almoxarifado/  https://solucao.digital/?gclid=EAIaIQobChMImafKqsKf_wIVtkZIAB30Tw1pEAAYAiAAEgJLWfD_BwE
-
-
-  // prova cadastro de php em banco de dados https://nicepage.com/pt/modelos-html
-ini_set('display_errors', 0);
-set_error_handler('tratarAviso');
-function tratarAviso($errno, $errstr, $errfile, $errline)
-{
+  include("bd.php");
+  aviso();
+  ?>
  
-  include 'login.php';
-  exit(); 
-}
-
-session_start();
-
-$username = $_SESSION['username'];
-
-if (isset($_SESSION['username']) && null !== $_SESSION['level']) {
-
-  $username = $_SESSION['username'];
-
-  $level = $_SESSION['level'];
-  $logado = true;}
-  // Verifica o nível de acesso do usuário e exibe os cards correspondente
-
-  ?>  
 <!DOCTYPE html>
 <html>
 
