@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meida</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        min-height: 100dvh;
+    }
+
+    /* 
+        m me trata como se me conhecesse a três anos desde que conheci ela
+        ela falou mt coisa pessoal
+        acho que era pra impressionar, ganhar confiança fácil
+
+        tem uma diferença gritante no jeito que ela me conta uma história e como ela conta pra cat
+    */
+
+    body {
+        display: grid;
+
+        grid-template-areas:
+            "nav main main main"
+            "nav main main main"
+            "nav footer footer footer";
+    }
+
+    main {
+        background-color: grey;
+        grid-area: main;
+    }
+
+    nav {
+        background-color: blanchedalmond;
+        grid-area: nav;
+    }
+
+    footer {
+        background-color: chocolate;
+        grid-area: footer;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Lorem, ipsum.</a></li>
+            <li><a href="">Eaque, dolorum?</a></li>
+            <li><a href="">Suscipit, enim?</a></li>
+            <li><a href="">Soluta, iusto.</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        oi bibia
+    </main>
+    
+    <footer>
+        <ul>
+            <li><a href="">Lorem, ipsum.</a></li>
+            <li><a href="">Commodi, officiis.</a></li>
+            <li><a href="">Nesciunt, a.</a></li>
+            <li><a href="">Perferendis, error.</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

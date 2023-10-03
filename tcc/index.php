@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['username']) || !isset($_SESSION['level'])) {
   // Se o usuário não estiver logado ou não tiver um nível definido, redirecione para a página de login
-  header("Location: loginTeste.php");
+  header("Location: login.php");
   exit();
 }
 
@@ -14,6 +14,7 @@ $level = $_SESSION['level'];
 
 <!DOCTYPE html>
 <html>
+  
 
 <head>
   <meta charset="utf-8">
@@ -21,12 +22,13 @@ $level = $_SESSION['level'];
   <title>Home | AlmoxariSars</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styleteste7.css">
+  <link rel="stylesheet" href="menuLateral/menu_lateral.css">
   <link rel="icon" type="image/png" href="logo/1.png">
 </head>
 
 <body>
   <?php
-  include 'menuLateral.php';
+  include 'menuLateral/index.php';
   ?>
 
 
@@ -50,9 +52,7 @@ $level = $_SESSION['level'];
 
   <footer class="footer">
     <footer>
-      <p class="footer-text">SARS | UNICAMP | COTIL</p>
-      <button class="btnRodape" onclick="abrirFormulario()">Contatar Desenvolvedor</button>
-
+      <p  class="footer-text">SARS | UNICAMP | COTIL</p>
     </footer>
 
 
